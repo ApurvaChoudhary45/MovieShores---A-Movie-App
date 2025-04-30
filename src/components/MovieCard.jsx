@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 
 import { FaHeart } from 'react-icons/fa'
 import { PlayCircleIcon } from 'lucide-react'
+import { FaCheck } from 'react-icons/fa';
 
 import { useSelector, useDispatch } from 'react-redux'
 import { favIcon } from '../Redux/favorite/favorite'
@@ -43,7 +44,7 @@ const MovieCard = () => {
                  <p className="text-gray-400 text-sm font-bold">Year: {item.Year}</p>
                  <p className="text-gray-400 text-sm font-bold">Type: {item.Type}</p>
                  <div className='bg-transparent flex justify-between mt-2'>
-                  {isWatch ? (<TicketIcon onClick={()=>dispatch(watchIcon(item.imdbID))} className="text-yellow-400 cursor-pointer"/>): (<PlayCircleIcon onClick={()=>dispatch(watchIcon(item.imdbID))} className="text-yellow-400 cursor-pointer"/>)}
+                  {isWatch ? (<FaCheck onClick={()=>dispatch(watchIcon(item.imdbID))} className='text-green-500 cursor-pointer'/>): (<button className='text-yellow-300 bg-gray-700 px-2 rounded-2xl' onClick={()=>dispatch(watchIcon(item.imdbID))}>Watch</button>)}
                   
                  <FaHeart style={{color: isFav ? 'red' : 'white'}} onClick={()=>{dispatch(favIcon(item.imdbID))
                  }}/>
