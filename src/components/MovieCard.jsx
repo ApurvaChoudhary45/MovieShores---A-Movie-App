@@ -57,7 +57,7 @@ const MovieCard = () => {
 
     useEffect(() => {
       const fetchmovie = async () => {
-        const result = await fetch(`http://www.omdbapi.com/?s=${searchQuery}&page=1&apikey=9421c1aa`)
+        const result = await fetch(`https://www.omdbapi.com/?s=${searchQuery}&page=1&apikey=9421c1aa`)
         const total = await result.json()
         setmovieData(total)
       }
