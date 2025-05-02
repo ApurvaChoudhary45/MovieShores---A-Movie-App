@@ -106,7 +106,7 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="Search"
-              className="rounded-xl px-2 py-1 flex-1 text-black"
+              className="rounded-xl px-2 py-1 flex-1 text-white"
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
